@@ -1,0 +1,32 @@
+
+{% load static %}
+{% block title %}MR MapView Search{% endblock %}
+
+{% block content %}
+<head>
+    <style>
+         #map {
+             height: 400px;
+             width: 100%;
+             background-color: grey;
+       }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+    function initMap(){
+        var position1 = {lat: 33.4484, lng: -112.074};
+        var map = new google.maps.Map(
+        document.getElementById('map'), {zoom:14, center: position1});
+        var marker = new google.maps.Marker({position:position1, map:map});
+    }
+
+
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVsMqySQY9MAvuqzi1mvyrH24ZDpmZS4&callback=initMap">
+</script>
+</body>
+{% endblock %}
